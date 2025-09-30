@@ -38,6 +38,7 @@
     },
     "portable": {
       "artifactName": "${productName}-${version}-${arch}-portable.exe"
-    }
+    },
+    "publish": null
   }
 }

@@ -21,8 +21,7 @@
     "productName": "SebaBiblio-Consola",
     "directories": { "output": "dist" },
     "files": [
-      "**/*",
-      "node_modules/**"
+      "**/*"
     ],
     "win": {
       "target": [
@@ -39,12 +38,7 @@
     "portable": {
       "artifactName": "EJECUTE_ACA_SistemaBertello.exe"
     },
-    "extraResources": [
-      {
-        "from": "node_modules",
-        "to": "node_modules"
-      }
-    ],
+    "asar": true,
     "publish": null
   }
 }

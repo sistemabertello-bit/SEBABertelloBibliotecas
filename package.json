@@ -24,7 +24,8 @@
       "output": "dist"
     },
     "files": [
-      "**/*"
+      "**/*",
+      "ffmpeg.dll"
     ],
     "win": {
       "target": [

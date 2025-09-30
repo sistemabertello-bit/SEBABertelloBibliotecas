@@ -28,8 +28,8 @@
         { "target": "portable", "arch": ["x64", "ia32"] },
         { "target": "nsis", "arch": ["x64", "ia32"] }
       ],
-      "artifactName": "SistemaBertello-${version}-portable.exe",
-      "sign": false
+  "artifactName": "SistemaBertello-${version}-portable.exe",
+  "icon": "assets/icon.ico"
     },
     "nsis": {
       "oneClick": false,

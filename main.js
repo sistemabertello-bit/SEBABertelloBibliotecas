@@ -1,7 +1,7 @@
-// app/main.js
-const { app, BrowserWindow, ipcMain } = require('electron');
+
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
-const { scheduleChecks } = require('./instructions');
+const { fetchInstructions, estaBloqueado } = require('./modules/instructions');
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -14,10 +14,25 @@ function createWindow() {
   win.loadFile(path.join(__dirname, 'index.html'));
 }
 
-app.whenReady().then(() => {
-  createWindow();
-  scheduleChecks(12);
-  app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });
+app.whenReady().then(async () => {
+  // Descargar instrucciones al iniciar
+  await fetchInstructions();
+
+  // Programar lectura diaria (cada 24h)
+  setInterval(fetchInstructions, 24 * 60 * 60 * 1000);
+
+  if (!estaBloqueado()) {
+    createWindow();
+  } else {
+    dialog.showErrorBox('Acceso denegado', 'La app está bloqueada hasta cumplir las condiciones.');
+    app.quit();
+  }
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0 && !estaBloqueado()) createWindow();
+  });
 });
 
-app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(); });
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});

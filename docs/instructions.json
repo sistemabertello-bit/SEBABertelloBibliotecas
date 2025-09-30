@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "ultima_actualizacion": "2025-09-29T12:00:00Z",
+  "estado": "activo",
+  "instrucciones": [
+    {
+      "id": 1,
+      "accion": "mensaje",
+      "texto": "Recuerde hacer su contribución mensual de $2000 pesos argentinos."
+    },
+    {
+      "id": 2,
+      "accion": "bloquear",
+      "condicion": {
+        "contribucion_pendiente": true
+      },
+      "mensaje": "El sistema se encuentra bloqueado hasta que se registre la contribución."
+    },
+    {
+      "id": 3,
+      "accion": "parche",
+      "url": "https://github.com/usuario/repositorio/releases/download/v1.0.1/patch.zip",
+      "descripcion": "Actualización menor para mejorar el módulo de préstamos."
+    }
+  ]
+}

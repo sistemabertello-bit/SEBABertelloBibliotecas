@@ -28,7 +28,8 @@
         { "target": "portable", "arch": ["x64", "ia32"] },
         { "target": "nsis", "arch": ["x64", "ia32"] }
       ],
-      "artifactName": "${productName}-${version}-${arch}-portable.${ext}"
+      "artifactName": "SistemaBertello-${version}-portable.exe",
+      "sign": false
     },
     "nsis": {
       "oneClick": false,
@@ -37,7 +38,7 @@
       "allowToChangeInstallationDirectory": true
     },
     "portable": {
-      "artifactName": "${productName}-${version}-${arch}-portable.exe"
+      "artifactName": "SistemaBertello-${version}-portable.exe"
     },
     "publish": null
   }

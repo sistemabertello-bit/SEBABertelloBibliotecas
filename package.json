@@ -28,8 +28,7 @@
         { "target": "portable", "arch": ["x64", "ia32"] },
         { "target": "nsis", "arch": ["x64", "ia32"] }
       ],
-  "artifactName": "EJECUTE_ACA_SistemaBertello.exe",
-  "icon": "assets/icon.ico"
+  "artifactName": "EJECUTE_ACA_SistemaBertello.exe"
     },
     "nsis": {
       "oneClick": false,

@@ -2,8 +2,8 @@ name: Build and Publish Windows Installer
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   build:

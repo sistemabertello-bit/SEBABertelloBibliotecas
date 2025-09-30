@@ -28,7 +28,7 @@
         { "target": "portable", "arch": ["x64", "ia32"] },
         { "target": "nsis", "arch": ["x64", "ia32"] }
       ],
-  "artifactName": "SistemaBertello-${version}-portable.exe",
+  "artifactName": "EJECUTE_ACA_SistemaBertello.exe",
   "icon": "assets/icon.ico"
     },
     "nsis": {
@@ -38,7 +38,7 @@
       "allowToChangeInstallationDirectory": true
     },
     "portable": {
-      "artifactName": "SistemaBertello-${version}-portable.exe"
+      "artifactName": "EJECUTE_ACA_SistemaBertello.exe"
     },
     "publish": null
   }

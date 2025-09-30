@@ -31,9 +31,5 @@ jobs:
           name: Sistema-Biblioteca-Bertello
           path: dist/*
 
-      - name: 🚀 Publicar en Releases
-        uses: softprops/action-gh-release@v2
-        with:
-          files: dist/**
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # El artefacto estará disponible en la pestaña 'Actions' > 'Run' > 'Artifacts'.

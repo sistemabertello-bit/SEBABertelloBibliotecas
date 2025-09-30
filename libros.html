@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Libros - SebaBiblio</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div id="libros">
+    <h2>Gestión de Libros</h2>
+    <form id="formLibro">
+      <input type="text" name="inventario" placeholder="Inventario" required>
+      <input type="text" name="titulo" placeholder="Título" required>
+      <input type="text" name="autor" placeholder="Autor principal" required>
+      <input type="text" name="isbn" placeholder="ISBN">
+      <input type="text" name="codigoBarra" placeholder="Código de barras">
+      <input type="text" name="qr" placeholder="QR">
+      <input type="text" name="ubicacion" placeholder="Ubicación (E-A-P)">
+      <button type="submit">Agregar libro</button>
+    </form>
+    <h3>Listado de Libros</h3>
+    <ul id="listaLibros"></ul>
+    <button onclick="location.href='menu.html'">Volver al menú</button>
+  </div>
+  <script src="libros.js"></script>
+</body>
+</html>

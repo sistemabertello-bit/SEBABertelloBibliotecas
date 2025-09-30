@@ -1,0 +1,42 @@
+name: Build and Publish Windows Portable Artifact
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-windows-portable:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies (root)
+        run: npm install
+
+      - name: Install dependencies (app)
+        run: |
+          cd app
+          npm install
+
+      - name: Build Windows portable
+        run: |
+          cd app
+          npx electron-builder --win portable --x64 --ia32 --dir
+
+      - name: Zip portable build
+        run: |
+          cd app
+          powershell Compress-Archive -Path dist/win-unpacked/* -DestinationPath ../dist/SebaBiblio-win-portable.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SebaBiblio-win-portable
+          path: dist/SebaBiblio-win-portable.zip

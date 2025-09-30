@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mensajería - SebaBiblio</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div id="mensajeria">
+    <h2>Mensajería</h2>
+    <form id="formMensaje">
+      <input type="text" name="destino" placeholder="Destino (email/whatsapp)" required>
+      <input type="text" name="asunto" placeholder="Asunto" required>
+      <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+    <h3>Bandeja interna</h3>
+    <ul id="bandejaMensajes"></ul>
+    <button onclick="location.href='menu.html'">Volver al menú</button>
+  </div>
+  <script src="mensajeria.js"></script>
+</body>
+</html>

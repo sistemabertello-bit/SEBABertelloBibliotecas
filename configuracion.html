@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Configuración - SebaBiblio</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div id="configuracion">
+    <h2>Configuración</h2>
+    <form id="formConfig">
+      <label>Canal de mensajería por defecto:</label>
+      <select name="canal">
+        <option value="email">Email</option>
+        <option value="whatsapp">WhatsApp</option>
+        <option value="interno">Interno</option>
+      </select>
+      <label>Límite de libros por usuario:</label>
+      <input type="number" name="limite" value="3" min="1">
+      <button type="submit">Guardar configuración</button>
+    </form>
+    <button onclick="location.href='menu.html'">Volver al menú</button>
+  </div>
+  <script src="configuracion.js"></script>
+</body>
+</html>

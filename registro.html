@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro y Términos de Uso</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div id="registro">
+    <h2>Registro de instalación</h2>
+    <form id="formRegistro">
+      <label for="email">Correo electrónico del responsable:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="empresa">Nombre de la empresa o institución:</label><br>
+      <input type="text" id="empresa" name="empresa" required><br><br>
+      <h3>Términos y condiciones de uso</h3>
+      <div id="terminos" style="height:250px;overflow:auto;border:1px solid #ccc;padding:10px;margin-bottom:10px;">
+        <p>Sistema de Biblioteca Escolar – Sebastián Nelson Jesús Bertello</p>
+        <p>Al instalar y utilizar este programa, usted acepta las siguientes condiciones:</p>
+        <b>Uso autorizado</b><br>
+        El software está diseñado exclusivamente para la gestión de bibliotecas escolares.<br>
+        Solo podrá ser utilizado por instituciones o personas debidamente autorizadas.<br><br>
+        <b>Responsabilidad del usuario</b><br>
+        El autor no se hace responsable por:<br>
+        El lugar en el que se instale el programa.<br>
+        El uso que se le dé al mismo.<br>
+        Pérdida, alteración o divulgación de información administrada por la institución.<br>
+        El correcto resguardo de datos (respaldos, contraseñas, permisos) depende únicamente de la institución usuaria.<br><br>
+        <b>Contribución obligatoria</b><br>
+        El uso del software implica el compromiso de realizar una contribución mensual.<br>
+        La contribución inicial será de 2000 (dos mil) pesos argentinos, monto que podrá actualizarse en el futuro.<br><br>
+        <b>Comunicación con el servidor</b><br>
+        Cada copia del programa se conecta periódicamente a un servidor de control para:<br>
+        Verificar actualizaciones, parches y mejoras.<br>
+        Recibir instrucciones de mantenimiento o seguridad.<br>
+        Esta función es obligatoria para garantizar el correcto funcionamiento del software.<br><br>
+        <b>Limitaciones</b><br>
+        El software no podrá ser modificado, redistribuido ni utilizado con fines distintos a los establecidos.<br>
+        Queda prohibido el acceso no autorizado a la consola de administración remota.<br><br>
+        <b>Privacidad y datos</b><br>
+        La aplicación administra información de libros y usuarios bajo responsabilidad exclusiva de la institución.<br>
+        No se transmiten datos personales a terceros sin autorización expresa.<br><br>
+        <b>Aceptación</b><br>
+        Si usted continúa con la instalación y el uso del programa, se entiende que acepta íntegramente estas condiciones.<br>
+        En caso contrario, deberá abstenerse de instalar o utilizar el sistema.
+      </div>
+      <input type="checkbox" id="acepto" name="acepto" required>
+      <label for="acepto">Acepto los términos y condiciones</label><br><br>
+      <button type="submit">Acepto</button>
+      <button type="button" id="noAcepto">No acepto</button>
+    </form>
+    <div id="mensaje" style="color:red;margin-top:10px;"></div>
+  </div>
+  <script src="registro.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "sebabiblio-consola",
+  "version": "1.0.0",
+  "description": "Consola de Administración - SebaBiblio",
+  "author": "Sebastián Bertello",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "adm-zip": "^0.5.9"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.sebabiblio.consola",
+    "productName": "SebaBiblio-Consola",
+    "directories": { "output": "dist" },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": [
+        { "target": "portable", "arch": ["x64", "ia32"] },
+        { "target": "nsis", "arch": ["x64", "ia32"] }
+      ],
+      "artifactName": "${productName}-${version}-${arch}-portable.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-${arch}-portable.exe"
+    },
+    "publish": []
+  }
+}

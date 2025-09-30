@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reportes - SebaBiblio</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div id="reportes">
+    <h2>Reportes</h2>
+    <button onclick="generarReporte('prestamos')">Préstamos por período</button>
+    <button onclick="generarReporte('libros')">Libros más prestados</button>
+    <button onclick="generarReporte('usuarios')">Usuarios activos</button>
+    <ul id="listaReportes"></ul>
+    <button onclick="location.href='menu.html'">Volver al menú</button>
+  </div>
+  <script src="reportes.js"></script>
+</body>
+</html>

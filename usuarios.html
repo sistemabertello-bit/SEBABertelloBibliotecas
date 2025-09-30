@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Usuarios - SebaBiblio</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div id="usuarios">
+    <h2>Gestión de Usuarios</h2>
+    <form id="formUsuario">
+      <input type="text" name="id" placeholder="ID interno" required>
+      <input type="text" name="dni" placeholder="DNI" required>
+      <input type="text" name="nombre" placeholder="Nombre" required>
+      <input type="text" name="apellido" placeholder="Apellido" required>
+      <input type="text" name="tipo" placeholder="Tipo (Alumno, Profesor, Externo)" required>
+      <input type="text" name="email" placeholder="Email">
+      <input type="text" name="whatsapp" placeholder="WhatsApp">
+      <button type="submit">Agregar usuario</button>
+    </form>
+    <h3>Listado de Usuarios</h3>
+    <ul id="listaUsuarios"></ul>
+    <button onclick="location.href='menu.html'">Volver al menú</button>
+  </div>
+  <script src="usuarios.js"></script>
+</body>
+</html>

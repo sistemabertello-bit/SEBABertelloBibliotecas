@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consola Administrador - SebaBiblio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="login">
+    <h2>Login Operador Principal</h2>
+    <form id="formLogin">
+      <input type="email" name="usuario" placeholder="Usuario" required value="progrmabertello@gmail.com">
+      <input type="password" name="clave" placeholder="Contraseña" required value="2003">
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+  <div id="consola" style="display:none;">
+    <h2>Consola de Administración de Copias</h2>
+    <input type="text" id="busqueda" placeholder="Buscar por email, IP o empresa...">
+    <button onclick="buscarCopias()">Buscar</button>
+    <button onclick="actualizarCopias()">Actualizar</button>
+    <div id="copias"></div>
+    <div id="accionesGlobales">
+      <button onclick="instruccionGlobal('mensaje')">Mandar mensaje a todas</button>
+      <button onclick="instruccionGlobal('bloquear')">Bloquear todas</button>
+      <button onclick="instruccionGlobal('habilitar')">Habilitar todas</button>
+    </div>
+    <div id="editorMensaje" style="display:none;">
+      <textarea id="mensajeGlobal" rows="4" cols="50">En 30 días se bloqueará el sistema.</textarea><br>
+      <button onclick="enviarMensajeGlobal()">Enviar mensaje</button>
+      <button onclick="cerrarEditorMensaje()">Cancelar</button>
+    </div>
+    <h2>Editor de instrucciones</h2>
+    <textarea id="editor" rows="8" cols="80"></textarea><br>
+    <button id="publicar">Publicar instrucciones</button>
+    <div id="resultado"></div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>

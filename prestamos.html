@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Préstamos - SebaBiblio</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div id="prestamos">
+    <h2>Gestión de Préstamos</h2>
+    <form id="formPrestamo">
+      <input type="text" name="id" placeholder="ID Préstamo" required>
+      <input type="text" name="socioId" placeholder="ID Usuario" required>
+      <input type="text" name="inventario" placeholder="Inventario Libro" required>
+      <input type="date" name="fechaPrestamo" required>
+      <input type="date" name="fechaDevolucionPrevista" required>
+      <button type="submit">Registrar préstamo</button>
+    </form>
+    <h3>Listado de Préstamos</h3>
+    <ul id="listaPrestamos"></ul>
+    <button onclick="location.href='menu.html'">Volver al menú</button>
+  </div>
+  <script src="prestamos.js"></script>
+</body>
+</html>

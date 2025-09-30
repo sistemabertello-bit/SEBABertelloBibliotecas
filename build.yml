@@ -1,0 +1,30 @@
+name: Build and Release SebaBiblio Windows Installer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+          cd app
+          npm install
+      - name: Build Windows Installer
+        run: |
+          cd app
+          npm run pack-installer
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SebaBiblio-Setup
+          path: app/dist/*.exe

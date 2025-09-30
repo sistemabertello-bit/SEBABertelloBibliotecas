@@ -9,20 +9,53 @@
   <div id="libros">
     <h2>Gestión de Libros</h2>
     <form id="formLibro">
+        <div>
+          <h4>Búsqueda de libros</h4>
+          <input type="text" id="busquedaInput" placeholder="Buscar por título, inventario, autor..." oninput="buscarLibrosManual()">
+          <button type="button" onclick="buscarPorCodigoBarra()">Buscar por Código de Barras (pistola/cámara)</button>
+          <button type="button" onclick="buscarPorCamara()">Buscar por Cámara</button>
+            <div id="camaraDialog" style="display:none;">
+              <h4>Escaneo por cámara</h4>
+              <video id="videoCamara" width="400" height="200" autoplay></video>
+              <div id="resultadoCamara"></div>
+              <button onclick="cerrarCamara()">Cerrar</button>
+            </div>
+        </div>
       <input type="text" name="inventario" placeholder="Inventario" required>
+      <button type="button" onclick="generarCodigoBarraLibro()">Mostrar código de barras</button>
+      <span id="codigoBarraVisual"></span>
+      <input type="text" name="estanteria" placeholder="Estantería">
+      <input type="text" name="anaquel" placeholder="Anaquel">
+      <input type="text" name="posicion" placeholder="Posición">
+      <button type="button" onclick="agregarUbicacionLibro()">Agregar ubicación</button>
+      <button type="button" onclick="mostrarFichaLibro()">Mostrar ficha completa</button>
       <input type="text" name="titulo" placeholder="Título" required>
       <input type="text" name="autor" placeholder="Autor principal" required>
-      <input type="text" name="isbn" placeholder="ISBN">
-      <input type="text" name="codigoBarra" placeholder="Código de barras">
+      <input type="text" name="isbn" placeholder="ISBN" id="isbnInput">
+      <button type="button" onclick="autocompletarISBN()">Autocompletar por ISBN</button>
+      <input type="text" name="codigoBarra" placeholder="Código de barras" id="codigoBarraInput">
+      <button type="button" onclick="buscarPorCodigoBarra()">Buscar por Código de Barras</button>
       <input type="text" name="qr" placeholder="QR">
       <input type="text" name="ubicacion" placeholder="Ubicación (E-A-P)">
+    <button type="button" onclick="generarCodigoBarraLibro()">Generar Código de Barras</button>
+    <button type="button" onclick="generarEtiquetaLibro()">Generar Etiqueta</button>
+    <button type="button" onclick="acomodarLibro()">Acomodar en Estantería/Anaquel/Posición</button>
+    <button type="button" onclick="generarCodigoBarraUsuario()">Código de Barras Usuario (por DNI)</button>
+      <button type="button" onclick="importarLibros()">Importar Libros</button>
       <button type="submit">Agregar libro</button>
     </form>
-    <h3>Listado de Libros</h3>
-    <ul id="listaLibros"></ul>
-    <button onclick="location.href='menu.html'">Volver al menú</button>
+  <h3>Listado de Libros</h3>
+    <div>
+      <button onclick="cargarListaLibros()">Actualizar lista</button>
+      <button onclick="imprimirCodigosBarraSeleccionados()">Imprimir códigos de barra seleccionados (PDF)</button>
+      <ul id="listaLibros"></ul>
+    </div>
+    <div id="pdfDialog" style="display:none;"></div>
+  <button onclick="location.href='menu.html'">Volver al menú</button>
+  <div id="importacionDialog" style="display:none;"></div>
   </div>
   <script src="libros.js"></script>
   <script src="libros.tunel.js"></script>
+  <script src="libros.extra.js"></script>
 </body>
 </html>

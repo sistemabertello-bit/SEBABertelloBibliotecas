@@ -1,6 +1,9 @@
-// Módulo de importación (demo)
+const { importarLibros, exportarLibros } = require('./libros');
+
 function importarDesdeAguapey(archivo) {
-  // Aquí se procesaría el archivo y se haría la importación real
-  return `Importación simulada desde: ${archivo}`;
+  return importarLibros(archivo);
 }
-module.exports = { importarDesdeAguapey };
+function exportarAguapey(destino) {
+  return exportarLibros(destino);
+}
+module.exports = { importarDesdeAguapey, exportarAguapey };

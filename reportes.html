@@ -8,12 +8,30 @@
 <body>
   <div id="reportes">
     <h2>Reportes</h2>
-    <button onclick="generarReporte('prestamos')">Préstamos por período</button>
-    <button onclick="generarReporte('libros')">Libros más prestados</button>
-    <button onclick="generarReporte('usuarios')">Usuarios activos</button>
-    <ul id="listaReportes"></ul>
-    <button onclick="location.href='menu.html'">Volver al menú</button>
+  <button onclick="generarReporte('prestamos')">Préstamos por período</button>
+  <button onclick="generarReporte('curso')">Préstamos por curso</button>
+  <button onclick="generarReporte('tema')">Préstamos por tema/materia</button>
+  <button onclick="generarReporte('autor')">Préstamos por autor</button>
+  <button onclick="generarReporte('mora')">Mora y recupero</button>
+  <button onclick="generarReporte('libros')">Libros más prestados</button>
+  <button onclick="generarReporte('usuarios')">Usuarios activos</button>
+  <button onclick="generarReporte('ranking')">Ranking de libros</button>
+  <button onclick="exportarReporte('csv')">Exportar CSV</button>
+  <button onclick="exportarReporte('xlsx')">Exportar XLSX</button>
+  <button onclick="exportarReporte('pdf')">Exportar PDF</button>
+  <button onclick="personalizarReporte()">Personalizar Reporte</button>
+    <button onclick="buscarPorCamaraReporte()">Buscar por Cámara</button>
+    <div id="camaraDialogReporte" style="display:none;">
+      <h4>Escaneo por cámara</h4>
+      <video id="videoCamaraReporte" width="400" height="200" autoplay></video>
+      <div id="resultadoCamaraReporte"></div>
+      <button onclick="cerrarCamaraReporte()">Cerrar</button>
+    </div>
+  <ul id="listaReportes"></ul>
+  <button onclick="location.href='menu.html'">Volver al menú</button>
+  <div id="dialogReportes" style="display:none;"></div>
   </div>
   <script src="reportes.js"></script>
+  <script src="reportes.extra.js"></script>
 </body>
 </html>

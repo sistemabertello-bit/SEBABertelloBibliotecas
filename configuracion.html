@@ -17,10 +17,33 @@
       </select>
       <label>Límite de libros por usuario:</label>
       <input type="number" name="limite" value="3" min="1">
+      <label>Roles y permisos:</label>
+      <button type="button" onclick="gestionarRoles()">Gestionar Roles</button>
+      <label>Campos obligatorios:</label>
+      <button type="button" onclick="configurarCamposObligatorios()">Configurar Campos</button>
+      <label>Estructura de estanterías y salas:</label>
+      <button type="button" onclick="configurarEstanterias()">Configurar Estanterías/Salas</button>
+      <label>Políticas de préstamos:</label>
+      <button type="button" onclick="configurarPoliticasPrestamo()">Configurar Políticas</button>
+      <label>Numeración de inventario:</label>
+      <button type="button" onclick="configurarNumeracionInventario()">Configurar Numeración</button>
+      <label>Preferencias de IA:</label>
+      <button type="button" onclick="configurarIA()">Configurar IA</button>
+      <label>Auditoría:</label>
+      <button type="button" onclick="verAuditoria()">Ver Auditoría</button>
+        <button type="button" onclick="buscarPorCamaraConfig()">Buscar por Cámara</button>
+        <div id="camaraDialogConfig" style="display:none;">
+          <h4>Escaneo por cámara</h4>
+          <video id="videoCamaraConfig" width="400" height="200" autoplay></video>
+          <div id="resultadoCamaraConfig"></div>
+          <button onclick="cerrarCamaraConfig()">Cerrar</button>
+        </div>
       <button type="submit">Guardar configuración</button>
     </form>
-    <button onclick="location.href='menu.html'">Volver al menú</button>
+  <button onclick="location.href='menu.html'">Volver al menú</button>
+  <div id="dialogConfig" style="display:none;"></div>
   </div>
   <script src="configuracion.js"></script>
+  <script src="configuracion.extra.js"></script>
 </body>
 </html>

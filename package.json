@@ -11,7 +11,8 @@
   "dependencies": {
     "adm-zip": "^0.5.9",
     "axios": "^1.12.2",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "quagga": "^0.12.1"
   },
   "devDependencies": {
     "electron": "^28.3.3",

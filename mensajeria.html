@@ -9,15 +9,34 @@
   <div id="mensajeria">
     <h2>Mensajería</h2>
     <form id="formMensaje">
-      <input type="text" name="destino" placeholder="Destino (email/whatsapp)" required>
+      <input type="text" name="destino" placeholder="Destino (email/whatsapp/interno)" required>
       <input type="text" name="asunto" placeholder="Asunto" required>
       <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+      <select name="canal">
+        <option value="email">Email</option>
+        <option value="whatsapp">WhatsApp</option>
+        <option value="interno">Interno</option>
+      </select>
+      <input type="file" name="adjunto" accept="image/*,application/pdf">
+      <button type="button" onclick="usarPlantilla()">Usar Plantilla</button>
+      <button type="button" onclick="enviarProgramado()">Enviar Programado</button>
+      <button type="button" onclick="configurarCanales()">Configurar Canales</button>
+      <button type="button" onclick="buscarPorFiltroMensajeria()">Buscar por Filtro</button>
+        <button type="button" onclick="buscarPorCamaraMensajeria()">Buscar por Cámara</button>
+        <div id="camaraDialogMensajeria" style="display:none;">
+          <h4>Escaneo por cámara</h4>
+          <video id="videoCamaraMensajeria" width="400" height="200" autoplay></video>
+          <div id="resultadoCamaraMensajeria"></div>
+          <button onclick="cerrarCamaraMensajeria()">Cerrar</button>
+        </div>
       <button type="submit">Enviar mensaje</button>
     </form>
-    <h3>Bandeja interna</h3>
-    <ul id="bandejaMensajes"></ul>
-    <button onclick="location.href='menu.html'">Volver al menú</button>
+  <h3>Bandeja interna</h3>
+  <ul id="bandejaMensajes"></ul>
+  <button onclick="location.href='menu.html'">Volver al menú</button>
+  <div id="dialogMensajeria" style="display:none;"></div>
   </div>
   <script src="mensajeria.js"></script>
+  <script src="mensajeria.extra.js"></script>
 </body>
 </html>

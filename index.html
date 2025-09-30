@@ -20,6 +20,23 @@
       <li><button onclick="location.href='respaldo.html'">Respaldo/Restauración</button></li>
     </ul>
   </div>
+    <div id="mensajeFijo" style="position:fixed;top:0;right:0;width:350px;min-height:40px;background:#f8f8f8;border-left:2px solid #333;padding:8px;z-index:9999;font-size:16px;box-shadow:-2px 2px 8px #ccc;">
+      <span id="textoMensajeFijo">SebaBiblio</span>
+      <div id="historialMensajes" style="font-size:13px;margin-top:8px;color:#444;"></div>
+    </div>
+    <div id="registroCopiaDialog" style="display:none;">
+      <h3>Registro de copia instalada</h3>
+      <form id="formRegistroCopia">
+        <label>Email del operador principal:</label><br>
+        <input type="email" id="emailCopia" required><br>
+        <label>Nombre de institución/empresa:</label><br>
+        <input type="text" id="empresaCopia" required><br>
+        <label>IP local:</label><br>
+        <input type="text" id="ipCopia" required><br>
+        <button type="submit">Registrar</button>
+      </form>
+      <div id="resultadoRegistroCopia"></div>
+    </div>
   <!-- Consola oculta, solo accesible por flujo especial -->
   <div id="consola" style="display:none;"></div>
   <script src="index.js"></script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Etiquetas y Códigos de Barras - SebaBiblio</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div id="etiquetas">
+    <h2>Etiquetas y Códigos de Barras</h2>
+    <form id="formEtiquetas">
+      <input type="text" name="inventario" placeholder="Inventario" required>
+      <input type="text" name="ubicacion" placeholder="Ubicación (E-A-P)">
+      <input type="text" name="signatura" placeholder="Signatura topográfica">
+      <button type="button" onclick="generarEtiqueta()">Generar Etiqueta</button>
+      <button type="button" onclick="imprimirEtiquetas(1)">Imprimir 1</button>
+      <button type="button" onclick="imprimirEtiquetas(10)">Imprimir 10</button>
+      <button type="button" onclick="imprimirEtiquetas(20)">Imprimir 20</button>
+      <button type="button" onclick="imprimirEtiquetasPersonalizado()">Impresión Personalizada</button>
+        <button type="button" onclick="buscarPorCamaraEtiquetas()">Buscar por Cámara</button>
+        <div id="camaraDialogEtiquetas" style="display:none;">
+          <h4>Escaneo por cámara</h4>
+          <video id="videoCamaraEtiquetas" width="400" height="200" autoplay></video>
+          <div id="resultadoCamaraEtiquetas"></div>
+          <button onclick="cerrarCamaraEtiquetas()">Cerrar</button>
+        </div>
+    </form>
+    <div id="previewEtiqueta"></div>
+    <button onclick="location.href='menu.html'">Volver al menú</button>
+  </div>
+  <script src="etiquetas.extra.js"></script>
+</body>
+</html>

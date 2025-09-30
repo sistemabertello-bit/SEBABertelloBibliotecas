@@ -13,15 +13,34 @@
       <input type="text" name="dni" placeholder="DNI" required>
       <input type="text" name="nombre" placeholder="Nombre" required>
       <input type="text" name="apellido" placeholder="Apellido" required>
-      <input type="text" name="tipo" placeholder="Tipo (Alumno, Profesor, Externo)" required>
+      <input type="text" name="tipo" placeholder="Tipo (Inicial, Primario, Secundario, Superior, Profesor, Externo)" required>
       <input type="text" name="email" placeholder="Email">
       <input type="text" name="whatsapp" placeholder="WhatsApp">
+      <input type="text" name="direccion" placeholder="Dirección">
+      <input type="file" name="foto" accept="image/*" capture="camera">
+      <select name="estado">
+        <option value="activo">Activo</option>
+        <option value="suspendido">Suspendido</option>
+        <option value="baja">Baja</option>
+      </select>
+      <button type="button" onclick="importarUsuarios()">Importar Usuarios</button>
+      <button type="button" onclick="buscarPorVoz()">Buscar por Voz</button>
+        <button type="button" onclick="buscarPorCamaraUsuario()">Buscar por Cámara</button>
+        <div id="camaraDialogUsuario" style="display:none;">
+          <h4>Escaneo por cámara</h4>
+          <video id="videoCamaraUsuario" width="400" height="200" autoplay></video>
+          <div id="resultadoCamaraUsuario"></div>
+          <button onclick="cerrarCamaraUsuario()">Cerrar</button>
+        </div>
+      <button type="button" onclick="buscarPorArchivo()">Buscar por Archivo</button>
       <button type="submit">Agregar usuario</button>
     </form>
-    <h3>Listado de Usuarios</h3>
-    <ul id="listaUsuarios"></ul>
-    <button onclick="location.href='menu.html'">Volver al menú</button>
+  <h3>Listado de Usuarios</h3>
+  <ul id="listaUsuarios"></ul>
+  <button onclick="location.href='menu.html'">Volver al menú</button>
+  <div id="importacionUsuariosDialog" style="display:none;"></div>
   </div>
   <script src="usuarios.js"></script>
+  <script src="usuarios.extra.js"></script>
 </body>
 </html>

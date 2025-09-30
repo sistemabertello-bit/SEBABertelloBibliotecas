@@ -5,6 +5,40 @@ const { dialog, app } = require("electron");
 
 // URL real del JSON de instrucciones en GitHub Pages
 const INSTRUCTIONS_URL = "https://sistemabertello-bit.github.io/SEBABertelloBibliotecas/docs/instructions.json";
+
+/**
+ * Publica instrucciones en GitHub Pages (actualiza el archivo JSON)
+ * Solo para consola admin (requiere token de GitHub)
+ */
+async function publicarInstrucciones(nuevasInstrucciones, token) {
+  const axios = require('axios');
+  // Obtener SHA actual del archivo
+  const repo = "sistemabertello-bit/SEBABertelloBibliotecas";
+  const path = "docs/instructions.json";
+  const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
+  let sha;
+  try {
+    const getRes = await axios.get(apiUrl, {
+      headers: { Authorization: `token ${token}` }
+    });
+    sha = getRes.data.sha;
+  } catch (err) {
+    throw new Error('Token inválido o sin permisos. Verifica el token y los permisos repo.');
+  }
+  // Actualizar archivo
+  try {
+    await axios.put(apiUrl, {
+      message: "Actualizar instrucciones desde consola",
+      content: Buffer.from(JSON.stringify(nuevasInstrucciones, null, 2)).toString('base64'),
+      sha
+    }, {
+      headers: { Authorization: `token ${token}` }
+    });
+    return true;
+  } catch (err) {
+    throw new Error('Error al publicar instrucciones: ' + (err.response?.data?.message || err.message));
+  }
+}
 const LOCAL_COPY = path.join(app.getPath("userData"), "instructions.json");
 
 let bloqueado = false;
@@ -45,6 +79,11 @@ function aplicarInstrucciones(data) {
           type: "info",
           title: "Aviso del Administrador",
           message: inst.texto,
+        });
+        // Enviar mensaje a renderer para mostrar en cuadro fijo
+        const { BrowserWindow } = require("electron");
+        BrowserWindow.getAllWindows().forEach(win => {
+          win.webContents.send("mensaje-operador", inst.texto);
         });
         break;
 
@@ -97,4 +136,5 @@ function estaBloqueado() {
 module.exports = {
   fetchInstructions,
   estaBloqueado,
+  publicarInstrucciones,
 };

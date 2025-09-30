@@ -8,11 +8,20 @@
 <body>
   <div id="respaldo">
     <h2>Respaldo y Restauración</h2>
-    <button onclick="respaldar()">Respaldar base</button>
-    <button onclick="restaurar()">Restaurar base</button>
-    <div id="resultadoRespaldo"></div>
+  <button onclick="respaldar()">Respaldar base</button>
+  <button onclick="restaurar()">Restaurar base</button>
+  <button onclick="exportarCSV()">Exportar catálogo CSV</button>
+  <button onclick="exportarXLSX()">Exportar catálogo XLSX</button>
+  <button onclick="exportarPDF()">Exportar catálogo PDF</button>
+  <button onclick="exportarUsuariosCSV()">Exportar usuarios CSV</button>
+  <button onclick="adjuntarArchivoRespaldo()">Adjuntar archivo</button>
+  <button onclick="verLogRespaldo()">Ver log de respaldo/restauración</button>
+  <button onclick="validarRespaldo()">Validar respaldo</button>
+  <div id="resultadoRespaldo"></div>
+  <div id="dialogRespaldo" style="display:none;"></div>
     <button onclick="location.href='menu.html'">Volver al menú</button>
   </div>
   <script src="respaldo.js"></script>
+  <script src="respaldo.extra.js"></script>
 </body>
 </html>

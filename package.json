@@ -21,7 +21,8 @@
     "productName": "SebaBiblio-Consola",
     "directories": { "output": "dist" },
     "files": [
-      "**/*"
+      "**/*",
+      "node_modules/**"
     ],
     "win": {
       "target": [

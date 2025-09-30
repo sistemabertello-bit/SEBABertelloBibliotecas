@@ -39,6 +39,6 @@
     "portable": {
       "artifactName": "${productName}-${version}-${arch}-portable.exe"
     },
-    "publish": []
+    "publish": "never"
   }
 }

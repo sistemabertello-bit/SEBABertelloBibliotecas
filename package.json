@@ -9,8 +9,9 @@
     "build": "electron-builder"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "adm-zip": "^0.5.9"
+    "adm-zip": "^0.5.9",
+    "axios": "^1.12.2",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "electron": "^28.3.3",
@@ -19,13 +20,20 @@
   "build": {
     "appId": "com.sebabiblio.consola",
     "productName": "SebaBiblio-Consola",
-    "directories": { "output": "dist" },
+    "directories": {
+      "output": "dist"
+    },
     "files": [
       "**/*"
     ],
     "win": {
       "target": [
-        { "target": "portable", "arch": ["x64"] }
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
       ],
       "artifactName": "EJECUTE_ACA_SistemaBertello.exe"
     },

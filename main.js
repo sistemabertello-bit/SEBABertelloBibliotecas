@@ -4,6 +4,7 @@ const path = require('path');
 
 const { fetchInstructions, estaBloqueado } = require('./modules/instructions');
 
+
 function createWindow(mode = "biblioteca") {
   const win = new BrowserWindow({
     width: 1200,
@@ -15,10 +16,11 @@ function createWindow(mode = "biblioteca") {
       contextIsolation: false
     }
   });
-  if (mode === "biblioteca") {
-    win.loadFile(path.join(__dirname, 'index.html'));
-  } else if (mode === "consola") {
-    win.loadFile(path.join(__dirname, 'consola.html'));
+  win.loadFile(path.join(__dirname, 'index.html'));
+  if (mode === "consola") {
+    win.webContents.once('did-finish-load', () => {
+      win.webContents.send('abrir-consola');
+    });
   }
 }
 

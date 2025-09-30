@@ -1,21 +1,34 @@
-// Login y lógica de consola de administración
-const USUARIO = "progrmabertello@gmail.com";
-const CLAVE = "2003";
+// Acceso solo por flujo oculto (triple clic y clave túnel)
 const INSTRUCTIONS_PATH = "../../instructions.json";
 
-document.getElementById('formLogin').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const usuario = e.target.usuario.value;
-  const clave = e.target.clave.value;
-  if (usuario === USUARIO && clave === CLAVE) {
-    document.getElementById('login').style.display = 'none';
+if (window.api && window.api.on) {
+  window.api.on('abrir-consola', () => {
+    document.getElementById('consola').innerHTML = `
+      <h2>Consola de Administración de Copias</h2>
+      <input type="text" id="busqueda" placeholder="Buscar por email, IP o empresa...">
+      <button onclick="buscarCopias()">Buscar</button>
+      <button onclick="actualizarCopias()">Actualizar</button>
+      <div id="copias"></div>
+      <div id="accionesGlobales">
+        <button onclick="instruccionGlobal('mensaje')">Mandar mensaje a todas</button>
+        <button onclick="instruccionGlobal('bloquear')">Bloquear todas</button>
+        <button onclick="instruccionGlobal('habilitar')">Habilitar todas</button>
+      </div>
+      <div id="editorMensaje" style="display:none;">
+        <textarea id="mensajeGlobal" rows="4" cols="50">En 30 días se bloqueará el sistema.</textarea><br>
+        <button onclick="enviarMensajeGlobal()">Enviar mensaje</button>
+        <button onclick="cerrarEditorMensaje()">Cancelar</button>
+      </div>
+      <h2>Editor de instrucciones</h2>
+      <textarea id="editor" rows="8" cols="80"></textarea><br>
+      <button id="publicar">Publicar instrucciones</button>
+      <div id="resultado"></div>
+    `;
     document.getElementById('consola').style.display = 'block';
     cargarCopias();
     cargarInstrucciones();
-  } else {
-    alert('Credenciales incorrectas');
-  }
-});
+  });
+}
 
 // Simulación de copias registradas (en producción, obtener del servidor)
 let copias = [];
